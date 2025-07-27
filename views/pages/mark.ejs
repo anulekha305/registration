@@ -1,0 +1,49 @@
+
+
+<% layout('/layouts/boilerplate') %>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">Add Students</h2>
+
+      <% if (curruser && curruser.username === 'teacher') { %>
+            <a href="/idx/marks" class="btn btn-primary mb-3">Upload Marks</a>
+        <% } %>
+
+        <h3>All Submitted Marks</h3>
+        <div class="newtable">
+            <table class="table table-striped table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Student</th>
+                        <th>Subject</th>
+                        <th>Semester</th>
+                        <th>Roll No</th>
+                        <th>Marks</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let mark of allmarks) { %>
+                        <tr>
+                            <td><%= mark.student %></td>
+                            <td><%= mark.subject %></td>
+                            <td><%= mark.semester %></td>
+                            <td><%= mark.rollno %></td>
+                            <td><%= mark.marks %></td>
+                            <td class="part">
+                                <% if (curruser && mark.createdBy && mark.createdBy._id.equals(curruser._id)) { %>
+                                    <a href="/idx/marks/<%= mark._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="/idx/marks/<%= mark._id %>?_method=DELETE" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                <% } else { %>
+                                    <span class="text-muted">View Only</span>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

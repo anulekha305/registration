@@ -1,0 +1,134 @@
+<!-- 
+<% layout('/layouts/boilerplate') %>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Edit Student Marks</h2>
+  
+  <form action="/idx/marks/<%= mark._id %>?_method=PUT" method="POST" class="bg-light p-4 rounded shadow-sm">
+
+    <div class="form-group mb-3">
+      <label for="student">Student Name</label>
+      <input type="text" class="form-control" id="student" name="marks[student]" value="<%= mark.student %>" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" id="subject" name="marks[subject]" value="<%= mark.subject %>" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="semester">Semester</label>
+      <input type="number" class="form-control" id="semester" name="marks[semester]" value="<%= mark.semester %>" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="rollno">Roll Number</label>
+      <input type="number" class="form-control" id="rollno" name="marks[rollno]" value="<%= mark.rollno %>" required>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="marks">Marks</label>
+      <input type="number" class="form-control" id="marks" name="marks[marks]" value="<%= mark.marks %>" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Update</button>
+
+  </form>
+</div> -->
+<% layout('/layouts/boilerplate') %>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Edit Student Marks</h2>
+  
+  <form action="/idx/marks/<%= mark._id %>?_method=PUT" method="POST" class="bg-light p-4 rounded shadow-sm needs-validation" novalidate>
+
+    <div class="form-group mb-3">
+      <label for="student">Student Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="student"
+        name="marks[student]"
+        value="<%= mark.student %>"
+        required
+      >
+      <div class="invalid-feedback">Please enter the student name.</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="subject">Subject</label>
+      <input
+        type="text"
+        class="form-control"
+        id="subject"
+        name="marks[subject]"
+        value="<%= mark.subject %>"
+        required
+      >
+      <div class="invalid-feedback">Please enter the subject.</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="semester">Semester</label>
+      <input
+        type="number"
+        class="form-control"
+        id="semester"
+        name="marks[semester]"
+        value="<%= mark.semester %>"
+        min="1"
+        max="12"
+        required
+      >
+      <div class="invalid-feedback">Semester must be between 1 and 12.</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="rollno">Roll Number</label>
+      <input
+        type="number"
+        class="form-control"
+        id="rollno"
+        name="marks[rollno]"
+        value="<%= mark.rollno %>"
+        min="1"
+        required
+      >
+      <div class="invalid-feedback">Please enter a valid roll number.</div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="marks">Marks</label>
+      <input
+        type="number"
+        class="form-control"
+        id="marks"
+        name="marks[marks]"
+        value="<%= mark.marks %>"
+        min="0"
+        max="100"
+        required
+      >
+      <div class="invalid-feedback">Marks must be between 0 and 100.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Update</button>
+  </form>
+</div>
+
+<script>
+  // Client-side Bootstrap validation
+  (function () {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>

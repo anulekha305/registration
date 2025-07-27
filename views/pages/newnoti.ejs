@@ -1,0 +1,55 @@
+<% layout('/layouts/boilerplate') %>
+
+<!-- <div class="new">
+
+       <div class="container mt-5">
+        <h1 class="mb-4 text-success">Create New Notification</h1>
+
+        <form action="/notifications" method="POST" class="border p-4 shadow rounded bg-light">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Enter title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Content:</label>
+                <textarea name="content" id="content" class="form-control" rows="5" placeholder="Write the notification content..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a href="/notifications/view" class="btn btn-secondary ms-2">Back</a>
+        </form>
+    </div>
+</div> -->
+
+<form action="/notifications" method="POST" class="noti border p-4 shadow rounded bg-light" onsubmit="return validateNotificationForm()">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Enter title" required minlength="3" maxlength="100">
+    </div>
+
+    <div class="mb-3">
+        <label for="content" class="form-label">Content:</label>
+        <textarea name="content" id="content" class="form-control" rows="5" placeholder="Write the notification content..." required minlength="10" maxlength="1000"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a href="/notifications/view" class="btn btn-secondary ms-2">Back</a>
+</form>
+
+<script>
+    function validateNotificationForm() {
+        const title = document.getElementById("title").value.trim();
+        const content = document.getElementById("content").value.trim();
+
+        if (title.length < 3 || title.length > 100) {
+            alert("Title must be between 3 and 100 characters.");
+            return false;
+        }
+        if (content.length < 10 || content.length > 1000) {
+            alert("Content must be between 10 and 1000 characters.");
+            return false;
+        }
+        return true;
+    }
+</script>

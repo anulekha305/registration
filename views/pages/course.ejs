@@ -1,0 +1,684 @@
+<% layout('/layouts/boilerplate') %>
+
+    <div class="container my-5">
+        <header class="text-center mb-5">
+            <h1>Explore University Courses</h1>
+            <p class="lead">Click on a field of study to reveal the courses available</p>
+        </header>
+    </div>
+
+    <div class="div ">
+        <div class="accordion" id="courseAccordion">
+
+            <!-- Arts and Humanities -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="artsHeading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#artsCollapse" aria-expanded="true" aria-controls="artsCollapse">
+                        Arts and Humanities
+                    </button>
+                </h2>
+                <div id="artsCollapse" class="accordion-collapse collapse" aria-labelledby="artsHeading"
+                    data-bs-parent="#courseAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#philosophyModal">
+                                Philosophy</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#historyModal">History
+                            </li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#literatureModal">
+                                Literature</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#linguisticsModal">
+                                Linguistics</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#fineArtsModal">Fine Arts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Sciences -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="socialHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#socialCollapse" aria-expanded="false" aria-controls="socialCollapse">
+                        Social Sciences
+                    </button>
+                </h2>
+                <div id="socialCollapse" class="accordion-collapse collapse" aria-labelledby="socialHeading"
+                    data-bs-parent="#courseAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#psychologyModal">
+                                Psychology</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#sociologyModal">
+                                Sociology</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#politicalScienceModal">
+                                Political Science</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#anthropologyModal">
+                                Anthropology</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#economicsModal">
+                                Economics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat this structure for other fields like Engineering, Business, etc. -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="socialHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mathCollapse" aria-expanded="false" aria-controls="mathCollapse">
+                        Mathematics and Statistics
+                    </button>
+                </h2>
+                <div id="mathCollapse" class="accordion-collapse collapse" aria-labelledby="mathHeading"
+                    data-bs-parent="#courseAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#PureMathematicsModal">
+                                Pure Mathematics</li>
+                            <li class="list-group-item" data-bs-toggle="modal"
+                                data-bs-target="#AppliedMathematicsModal">Applied Mathematics</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#StatisticsModal">
+                                Statistics</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#DataAnalysisModal">Data
+                                Analysis</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#ActuarialScienceModal">
+                                Actuarial Science</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="socialHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#engineeringCollapse" aria-expanded="false" aria-controls="engineeringCollapse">
+                        Engineering and Technology
+                    </button>
+                </h2>
+                <div id="engineeringCollapse" class="accordion-collapse collapse" aria-labelledby="engineeringHeading"
+                    data-bs-parent="#courseAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#ComputerScienceModal">
+                                Computer Science</li>
+                            <li class="list-group-item" data-bs-toggle="modal"
+                                data-bs-target="#InformationTechnologyModal">Information Technology</li>
+                            <li class="list-group-item" data-bs-toggle="modal"
+                                data-bs-target="#ElectricalEngineeringModal">Electrical Engineering</li>
+                            <li class="list-group-item" data-bs-toggle="modal"
+                                data-bs-target="#MechanicalEngineeringModal">Mechanical Engineering</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#CivilEngineeringModal">
+                                Civil Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="socialHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#businessmanagementCollapse" aria-expanded="false"
+                        aria-controls="businessmanagementCollapse">
+                        Business and Management
+                    </button>
+                </h2>
+                <div id="businessmanagementCollapse" class="accordion-collapse collapse"
+                    aria-labelledby="businessmanagementHeading" data-bs-parent="#courseAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#AccountingModal">
+                                Accounting</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#FinanceModal">Finance
+                            </li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#MarketingModal">
+                                Marketing</li>
+                            <li class="list-group-item" data-bs-toggle="modal"
+                                data-bs-target="#HumanResourceManagementModal">Human Resource Management</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#EntrepreneurshipModal">
+                                Entrepreneurship</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="socialHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#naturalCollapse" aria-expanded="false" aria-controls="naturalCollapse">
+                        Natural Sciences
+                    </button>
+                </h2>
+                <div id="naturalCollapse" class="accordion-collapse collapse" aria-labelledby="naturalHeading"
+                    data-bs-parent="#courseAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#BiologyModal">Biology
+                            </li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#ChemistryModal">
+                                Chemistry</li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#PhysicsModal">Physics
+                            </li>
+                            <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#EarthSciencesModal">
+                                Earth Sciences</li>
+                            <li class="list-group-item" data-bs-toggle="modal"
+                                data-bs-target="#EnvironmentalScienceModal">Environmental Science</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example Modals (popup) -->
+    <div class="modal fade" id="philosophyModal" tabindex="-1" aria-labelledby="philosophyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="philosophyModalLabel">Philosophy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Fees:</strong> ₹15,000/year</p>
+                    <p>This course explores existential questions and ethical considerations, fostering critical
+                        thinking.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historyModalLabel">History</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹50,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="literatureModal" tabindex="-1" aria-labelledby="literatureModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="literatureModalLabel">Literature</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹10,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="linguisticsModal" tabindex="-1" aria-labelledby="linguisticsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="linguisticsModalLabel">Linguistics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹15,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="fineArtsModal" tabindex="-1" aria-labelledby="fineArtsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fineArtsModalLabel">Fine Arts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹20,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // -->
+    <div class="modal fade" id="psychologyModal" tabindex="-1" aria-labelledby="psychologyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="psychologyModalLabel">Psychology</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 5 years</p>
+                    <p><strong>Fees:</strong> ₹18,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sociologyModal" tabindex="-1" aria-labelledby="sociologyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sociologyModalLabel">Sociology</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹26,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="politicalScienceModal" tabindex="-1" aria-labelledby="politicalScienceModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="politicalScienceModalLabel">Political Science</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 5 years</p>
+                    <p><strong>Fees:</strong> ₹30,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="anthropologyModal" tabindex="-1" aria-labelledby="anthropologyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="anthropologyModalLabel">Anthropology</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹19,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="economicsModal" tabindex="-1" aria-labelledby="economicsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="economicsModalLabel">Economics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 5 years</p>
+                    <p><strong>Fees:</strong> ₹18,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // -->
+    <div class="modal fade" id="PureMathematicsModal" tabindex="-1" aria-labelledby="PureMathematicsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PureMathematicsModalLabel">Pure Mathematics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹66,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="AppliedMathematicsModal" tabindex="-1" aria-labelledby="AppliedMathematicsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="AppliedMathematicsModalLabel">Applied Mathematics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹28,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="StatisticsModal" tabindex="-1" aria-labelledby="StatisticsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="StatisticsModalLabel">Political Science</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹46,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="DataAnalysisModal" tabindex="-1" aria-labelledby="DataAnalysisModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="DataAnalysisModalLabel">Data Analysis</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 5 years</p>
+                    <p><strong>Fees: </strong>₹40,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ActuarialScienceModal" tabindex="-1" aria-labelledby="ActuarialScienceModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ActuarialScienceModalLabel">Actuarial Science</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹18,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ComputerScienceModal" tabindex="-1" aria-labelledby="ComputerScienceModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ComputerScienceModalLabel">Computer Science</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹55,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="InformationTechnologyModal" tabindex="-1"
+        aria-labelledby="InformationTechnologyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="InformationTechnologyModalLabel">InformationTechnology</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹45,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ElectricalEngineeringModal" tabindex="-1"
+        aria-labelledby="ElectricalEngineeringModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ElectricalEngineeringModalLabel">ElectricalEngineering</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹40,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="MechanicalEngineeringModal" tabindex="-1"
+        aria-labelledby="MechanicalEngineeringModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="MechanicalEngineeringModalLabel">MechanicalEngineering</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹40,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="CivilEngineeringModal" tabindex="-1" aria-labelledby="CivilEngineeringModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="CivilEngineeringModalLabel">CivilEngineering</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 4 years</p>
+                    <p><strong>Fees:</strong> ₹37,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="AccountingModal" tabindex="-1" aria-labelledby="AccountingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="AccountingModalLabel">Accounting</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Fees:</strong> ₹35,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="FinanceModal" tabindex="-1" aria-labelledby="FinanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="FinanceModalLabel">Finance</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 5 years</p>
+                    <p><strong>Fees:</strong> ₹40,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="MarketingModal" tabindex="-1" aria-labelledby="MarketingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="MarketingModalLabel">Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹35,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="HumanResourceManagementModal" tabindex="-1"
+        aria-labelledby="HumanResourceManagementModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="HumanResourceManagementModalLabel">HumanResource Management</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Fees:</strong> ₹30,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="EntrepreneurshipModal" tabindex="-1" aria-labelledby="EntrepreneurshipModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EntrepreneurshipModalLabel">Entrepreneurship</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹35,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="BiologyModal" tabindex="-1" aria-labelledby="BiologyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BiologyModalLabel">Biology</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Fees:</strong> ₹40,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ChemistryModal" tabindex="-1" aria-labelledby="ChemistryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ChemistryModalLabel">Chemistry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹35,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="PhysicsModal" tabindex="-1" aria-labelledby="PhysicsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PhysicsModalLabel">Physics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹35,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="EarthSciencesModal" tabindex="-1" aria-labelledby="EarthSciencesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EarthSciencesModalLabel">EarthSciences</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong>4 years</p>
+                    <p><strong>Fees:</strong> ₹25,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="EnvironmentalScienceModal" tabindex="-1"
+        aria-labelledby="EnvironmentalScienceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EnvironmentalScienceModalLabel">EnvironmentalScience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Duration:</strong> 3 years</p>
+                    <p><strong>Fees:</strong> ₹35,000/year</p>
+                    <p>Study of ancient, medieval, and modern times developing research and analytical skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>

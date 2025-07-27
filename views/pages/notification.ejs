@@ -1,0 +1,46 @@
+<% layout('/layouts/boilerplate') %>
+
+    <div class="noti">
+        <div class="container mt-5">
+            <h1 class="mb-4 text-primary">Latest Notifications</h1>
+
+            <% if (latestNotifications.length===0) { %>
+                <div class="alert alert-info">No notifications yet.</div>
+                <% } else { %>
+                    <div class="row row-cols-1 g-4">
+                        <% latestNotifications.forEach(notif=> { %>
+                            <div class="col">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= notif.title %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= notif.content %>
+                                        </p>
+                                        <p class="card-text">
+                                            <small class="text-muted">Posted on: <%= notif.createdAt.toDateString() %>
+                                                    </small>
+                                        </p>
+                                        <% if (notif.createdBy && notif.createdBy.username) { %>
+                                            <p class="card-text">
+                                                <small class="text-muted">By: <%= notif.createdBy.username %></small>
+                                            </p>
+                                            <% } %>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <% } %>
+
+                        <div class="mt-4">
+                            <% if (!curruser) { %>
+                                <a href="/login" class="btn btn-outline-primary">Teacher Login</a>
+                                <% } else { %>
+                                    <a href="/notifications/manage" class="btn btn-primary">Manage Notifications</a>
+                                    <% } %>
+                        </div>
+        </div>
+    </div>

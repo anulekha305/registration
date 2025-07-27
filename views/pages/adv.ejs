@@ -1,0 +1,62 @@
+<% layout('/layouts/boilerplate') %>
+<form id="suggestionForm" class="container my-5 p-4 border rounded bg-light shadow needs-validation" novalidate>
+  <h1 class="mb-4 text-center">Course Suggestion Form</h1>
+
+  <!-- Class 10 Details -->
+  <h3 class="mt-4">Class 10 Details</h3>
+
+  <div class="mb-3">
+    <label for="class10Board" class="form-label">Board Name:</label>
+    <select id="class10Board" class="form-select" required>
+      <option value="">Select Board</option>
+      <option value="WBBSE">WBBSE</option>
+      <option value="CBSE">CBSE</option>
+    </select>
+    <div class="invalid-feedback">Please select a board.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="class10Physical" class="form-label">Physical Science Score:</label>
+    <input type="number" class="form-control" id="class10Physical" placeholder="Enter Physical Science Score" required>
+    <div class="invalid-feedback">Physical Science score is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="class10Life" class="form-label">Life Science Score:</label>
+    <input type="number" class="form-control" id="class10Life" placeholder="Enter Life Science Score" required>
+    <div class="invalid-feedback">Life Science score is required.</div>
+  </div>
+
+  <!-- Class 12 Details -->
+  <h3 class="mt-4">Class 12 Details</h3>
+
+  <div class="mb-3">
+    <label for="class12Board" class="form-label">Board Name:</label>
+    <select id="class12Board" class="form-select" required>
+      <option value="">Select Board</option>
+      <option value="WBBSE">WBBSE</option>
+      <option value="CBSE">CBSE</option>
+    </select>
+    <div class="invalid-feedback">Please select a board.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="class12Physics" class="form-label">Physics Score:</label>
+    <input type="number" class="form-control" id="class12Physics" placeholder="Enter Physics Score" required>
+    <div class="invalid-feedback">Physics score is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="class12Biology" class="form-label">Biology Score:</label>
+    <input type="number" class="form-control" id="class12Biology" placeholder="Enter Biology Score" required>
+    <div class="invalid-feedback">Biology score is required.</div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-primary btn-lg">Get Suggestions</button>
+  </div>
+
+  <!-- Suggestions Output -->
+  <div id="suggestions" class="mt-4"></div>
+</form>

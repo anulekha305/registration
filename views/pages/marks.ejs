@@ -1,0 +1,65 @@
+
+<% layout('/layouts/boilerplate') %>
+
+<div class=" box container mt-5">
+  <h1 class="text-center mb-4">Upload Student Marks</h1>
+  <form action="/idx/marks" method="POST" class="bg-light p-4 rounded shadow-sm needs-validation" novalidate>
+    
+    <div class="  form-group mb-3">
+      <label for="studentName">Student Name</label>
+      <input type="text" class="form-control" id="studentName" name="marks[student]" required>
+      <div class="invalid-feedback">Please enter student name.</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="subject">Subject</label>
+      <select class="form-control" id="subject" name="marks[subject]" required>
+        <option value="" disabled selected>Select a subject</option>
+        <% ['Philosophy','History','Literature','Linguistic','Fine Arts','Psychology','Sociology','Political Science','Anthropology','Economics','Applied Mathematics','Statistics','Data Analysis','Actuarial Science','Accounting','Finance','Marketing','Human Resource Management','Entrepreneurship','Biology','Chemistry','Physics','Earth Sciences','Environmental Science'].forEach(sub => { %>
+          <option value="<%= sub %>"><%= sub %></option>
+        <% }); %>
+      </select>
+      <div class="invalid-feedback">Please select a subject.</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="semester">Semester</label>
+      <input type="number" class="form-control" id="semester" name="marks[semester]" min="1" max="12" required>
+      <div class="invalid-feedback">Please enter a valid semester (1–12).</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="rollno">Roll Number</label>
+      <input type="number" class="form-control" id="rollno" name="marks[rollno]" min="1" required>
+      <div class="invalid-feedback">Please enter a valid roll number.</div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="marks">Marks</label>
+      <input type="number" class="form-control" id="marks" name="marks[marks]" min="0" max="100" required>
+      <div class="invalid-feedback">Marks must be between 0 and 100.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  </form>
+</div> 
+
+
+
+
+ <script>
+  // Bootstrap validation
+  (function () {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>

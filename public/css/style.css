@@ -1,0 +1,77 @@
+.container-fluid{
+    background-color: rgb(97, 97, 208);
+    height:64px;
+}
+
+.navbar-nav{
+   font-size: 22px;
+   
+}
+
+/* mark div */
+.di{
+    height:60vh;
+    width: 100vh;
+}
+
+.div{
+    height:69vh;
+    width: 120vh;
+    padding-left: 20vh;
+    border: 2px ;
+} 
+
+.newtable{
+    padding-bottom: 60vh;
+}
+.box{
+    padding-bottom: 50vh;
+}
+/* reco */
+.port{
+    padding-bottom: 60vh;  
+}
+.new{
+    padding-bottom: 60vh; 
+}
+
+.reco{
+    margin-bottom: 60vh;
+}
+
+
+/* /scheduling/ */
+.class{
+    padding-bottom: 60vh;
+
+}
+/* /schedule/ */
+.class{
+    padding-bottom: 60vh;
+} 
+/* noti */
+#loginPage, #createNotificationPage {
+    display: none;
+
+}
+.noti{
+    padding-bottom: 60vh;
+}
+
+.manage{
+    padding-bottom: 80vh;
+}
+.noti{
+    margin-bottom: 150vh;
+}
+.editnoti{
+     margin-bottom: 60vh;
+}
+/* fees */
+.contain{
+    padding-bottom: 60vh;
+}
+/* signup */
+.sign{
+    padding-bottom: 60vh;
+}

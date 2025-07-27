@@ -1,0 +1,32 @@
+<% layout('/layouts/boilerplate') %>
+
+
+  
+<body class="bg-light">
+  <div class="reco">
+    <div class="container mt-5">
+      <h2 class="mb-4">Edit Recommendation</h2>
+      <form action="/recommendations/<%= recommendation._id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="recommendation" class="form-label">Recommendation</label>
+          <textarea class="form-control" id="recommendation" name="recommendation" rows="3" required><%= recommendation.recommendation %></textarea>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="studentAdvice" class="form-label">Student Advice</label>
+          <textarea class="form-control" id="studentAdvice" name="studentAdvice" rows="3" required><%= recommendation.studentAdvice %></textarea>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="teacherReview" class="form-label">Teacher Review</label>
+          <textarea class="form-control" id="teacherReview" name="teacherReview" rows="3" required><%= recommendation.teacherReview %></textarea>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">This field is required.</div>
+        </div>
+        <button type="submit" class="btn btn-success">Update</button>
+        <a href="/recommendations/view" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </div>

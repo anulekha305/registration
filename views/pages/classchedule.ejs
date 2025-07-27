@@ -1,0 +1,375 @@
+<!-- <% layout('/layouts/boilerplate') %>
+  <form action="/idx/classschedu">
+    <div class="class">
+      <div class="container py-5">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <h1 class="text-center mb-4">Class Schedule</h1>
+
+            <div class="mb-4">
+              <label for="courseSelect" class="form-label">Select a Course:</label>
+              <select id="courseSelect" class="form-select">
+                <option value="Philosophy">Philosophy</option>
+                <option value="History">History</option>
+                <option value="Literature">Literature</option>
+                <option value="Linguistic">Linguistic</option>
+                <option value="Fine Arts">Fine Arts</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Sociology">Sociology</option>
+                <option value="Political Science">Political Science</option>
+                <option value="Anthropology">Anthropology</option>
+                <option value="Economics">Economics</option>
+                <option value="Applied Mathematics">Applied Mathematics</option>
+                <option value="Statistics">Statistics</option>
+                <option value="Data Analysis">Data Analysis</option>
+                <option value="Actuarial Science">Actuarial Science</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Human Resource Management">Human Resource Management</option>
+                <option value="Entrepreneurship">Entrepreneurship</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="Earth Sciences">Earth Sciences</option>
+                <option value="Environmental Science">Environmental Science</option>
+              </select>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered text-center">
+                <thead class="table-success">
+                  <tr>
+                    <th>Day</th>
+                    <th>10 AM - 12 PM</th>
+                    <th>12 PM - 2 PM</th>
+                    <th>2 PM - 4 PM</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleBody">
+                  <!-- Dynamic schedule here -->
+                   
+                <!-- </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </form> --> 
+  <% layout('/layouts/boilerplate') %>
+<form action="/idx/classschedu">
+  <div class="class">
+    <div class="container py-5">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h1 class="text-center mb-4">Class Schedule</h1>
+
+          <div class="mb-4">
+            <label for="courseSelect" class="form-label">Select a Course:</label>
+            <select id="courseSelect" class="form-select">
+              <option value="Philosophy">Philosophy</option>
+              <option value="History">History</option>
+              <option value="Literature">Literature</option>
+              <option value="Linguistic">Linguistic</option>
+              <option value="Fine Arts">Fine Arts</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Sociology">Sociology</option>
+              <option value="Political Science">Political Science</option>
+              <option value="Anthropology">Anthropology</option>
+              <option value="Economics">Economics</option>
+              <option value="Applied Mathematics">Applied Mathematics</option>
+              <option value="Statistics">Statistics</option>
+              <option value="Data Analysis">Data Analysis</option>
+              <option value="Actuarial Science">Actuarial Science</option>
+              <option value="Accounting">Accounting</option>
+              <option value="Finance">Finance</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Human Resource Management">Human Resource Management</option>
+              <option value="Entrepreneurship">Entrepreneurship</option>
+              <option value="Biology">Biology</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Physics">Physics</option>
+              <option value="Earth Sciences">Earth Sciences</option>
+              <option value="Environmental Science">Environmental Science</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered text-center">
+              <thead class="table-success">
+                <tr>
+                  <th>Day</th>
+                  <th>10 AM - 12 PM</th>
+                  <th>12 PM - 2 PM</th>
+                  <th>2 PM - 4 PM</th>
+                </tr>
+              </thead>
+              <tbody id="scheduleBody">
+                <!-- Dynamic schedule rows go here -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Place your script below -->
+<script>
+  const scheduleData = {
+    // Your complete scheduleData object (already pasted above, use as-is)
+    // ...
+
+
+      "Philosophy": {
+        "Monday": ["Philosophy", "", ""],
+        "Tuesday": ["", "", "Philosophy"],
+        "Wednesday": ["", "Philosophy", ""],
+        "Thursday": ["Philosophy", "", ""],
+        "Friday": ["", "Philosophy", ""],
+        "Saturday": ["", "", "Philosophy"]
+    },
+    "History": {
+        "Monday": ["History", "", ""],
+        "Tuesday": ["", "", "History"],
+        "Wednesday": ["", "History", ""],
+        "Thursday": ["History", "", ""],
+        "Friday": ["", "History", ""],
+        "Saturday": ["", "", "History"]
+    },
+    "Literature": {
+        "Monday": ["Literature", "", ""],
+        "Tuesday": ["", "", "Literature"],
+        "Wednesday": ["", "Literature", ""],
+        "Thursday": ["Literature", "", ""],
+        "Friday": ["", "Literature", ""],
+        "Saturday": ["", "", "Literature"]
+    },
+    "Linguistic": {
+        "Monday": ["Linguistic", "", ""],
+        "Tuesday": ["", "Linguistic", ""],
+        "Wednesday": ["", "", "Linguistic"],
+        "Thursday": ["", "Linguistic", ""],
+        "Friday": ["Linguistic", "", ""],
+        "Saturday": ["", "Linguistic", ""]
+    },
+    "Fine Arts": {
+        "Monday": ["", "Fine Arts", ""],
+        "Tuesday": ["", "",""],
+        "Wednesday":["Fine Arts", "",""],
+        "Thursday": ["", "", ""],
+        "Friday": ["","", "Fine Arts"],
+        "Saturday": ["Fine Arts", "",""]
+    },
+    "Psychology": {
+        "Monday": ["Psychology", "", ""],
+        "Tuesday": ["", "", "Psychology"],
+        "Wednesday": ["", "Psychology", ""],
+        "Thursday": ["Psychology", "", ""],
+        "Friday": ["", "Psychology", ""],
+        "Saturday": ["", "", "Psychology"]
+    },
+    "Sociology": {
+        "Monday": ["Sociology", "", ""],
+        "Tuesday": ["", "", "Sociology"],
+        "Wednesday": ["", "Sociology", ""],
+        "Thursday": ["Sociology", "", ""],
+        "Friday": ["", "Sociology", ""],
+        "Saturday": ["", "", "Sociology"]
+    },
+    "Political Science":{
+        "Monday": ["Political Science", "", ""],
+        "Tuesday": ["", "", "Political Science"],
+        "Wednesday": ["", "Political Science", ""],
+        "Thursday": ["Political Science", "", ""],
+        "Friday": ["", "Political Science", ""],
+        "Saturday": ["", "", "Political Science"]
+    },
+ 
+    "Anthropology": {
+        "Monday": ["","" , "Anthropology"],
+        "Tuesday": ["Anthropology", "",""],
+        "Wednesday":["", "Anthropology",""],
+        "Thursday": ["Anthropology", "", ""],
+        "Friday": ["","", "Anthropology"],
+        "Saturday": ["", "Anthropology",""]
+    },
+    "Economics": {
+        "Monday": ["Economics","" , ""],
+        "Tuesday": ["", "Economics",""],
+        "Wednesday":["Economics", "",""],
+        "Thursday": ["", "Economics", ""],
+        "Friday": ["","", "Economics"],
+        "Saturday": ["Economics", "",""]
+    },
+    "Pure MathematicsStatistics": {
+        "Monday": ["Pure Mathematics","" , ""],
+        "Tuesday": ["", "Pure Mathematics",""],
+        "Wednesday":["", "","Pure Mathematics"],
+        "Thursday": ["", "Pure Mathematics", ""],
+        "Friday": ["Pure Mathematics","", ""],
+        "Saturday": ["Pure Mathematics", "",""]
+    },
+    "Applied Mathematics": {
+        "Monday": ["Applied Mathematics","" , ""],
+        "Tuesday": ["", "Applied Mathematics",""],
+        "Wednesday":["Applied Mathematics", "",""],
+        "Thursday": ["", "", "Applied Mathematics"],
+        "Friday": ["","Applied Mathematics", ""],
+        "Saturday": ["Applied Mathematics", "",""]
+    },
+   
+    "Statistics": {
+        "Monday": ["","" , "Statistics"],
+        "Tuesday": ["Statistics", "",""],
+        "Wednesday":["", "Statistics",""],
+        "Thursday": ["Statistics", "", ""],
+        "Friday": ["","Statistics", ""],
+        "Saturday": ["", "","Statistics"]
+    },
+    "Data Analysis": {
+        "Monday": ["Data Analysis","" , ""],
+        "Tuesday": ["", "","Data Analysis"],
+        "Wednesday":["", "Data Analysis",""],
+        "Thursday": ["Data Analysis", "", ""],
+        "Friday": ["","", "Data Analysis"],
+        "Saturday": ["Data Analysis", "",""]
+    },
+    "Actuarial Science": {
+        "Monday": ["Actuarial Science","" , ""],
+        "Tuesday": ["", "","Actuarial Science"],
+        "Wednesday":["Actuarial Science", "",""],
+        "Thursday": ["", "Actuarial Science", ""],
+        "Friday": ["Actuarial Science","", ""],
+        "Saturday": ["", "","Actuarial Science"]
+    },
+    "Accounting": {
+        "Monday": ["","" , "Accounting"],
+        "Tuesday": ["", "Accounting",""],
+        "Wednesday":["Accounting", "",""],
+        "Thursday": ["", "", "Accounting"],
+        "Friday": ["","Accounting", ""],
+        "Saturday": ["Accounting", "",""]
+    },
+    "Finance": {
+        "Monday": ["","Finance" , ""],
+        "Tuesday": ["", "","Finance"],
+        "Wednesday":["Finance", "",""],
+        "Thursday": ["", "Finance", ""],
+        "Friday": ["Finance","", ""],
+        "Saturday": ["", "","Finance"]
+    },
+    "Marketing": {
+        "Monday": ["Marketing","" , ""],
+        "Tuesday": ["", "Marketing",""],
+        "Wednesday":["", "","Marketing"],
+        "Thursday": ["", "Marketing", ""],
+        "Friday": ["","", "Marketing"],
+        "Saturday": ["Marketing", "",""]
+    },
+    "Human Resource Management": {
+        "Monday": ["Human Resource Management","" , ""],
+        "Tuesday": ["Human Resource Management", "",""],
+        "Wednesday":["", "Human Resource Management",""],
+        "Thursday": ["", "", "Human Resource Management"],
+        "Friday": ["Human Resource Management","", ""],
+        "Saturday": ["", "","Human Resource Management"]
+    },
+    "Entrepreneurship": {
+        "Monday": ["","Entrepreneurship" , ""],
+        "Tuesday": ["", "","Entrepreneurship"],
+        "Wednesday":["Entrepreneurship", "",""],
+        "Thursday": ["", "Entrepreneurship", ""],
+        "Friday": ["Entrepreneurship","", ""],
+        "Saturday": ["", "","Entrepreneurship"]
+    },
+    "Biology": {
+        "Monday": ["Biology","" , ""],
+        "Tuesday":["", "","Biology"],
+        "Wednesday":["", "","Biology"],
+        "Thursday": ["Biology", "", ""],
+        "Friday": ["","Biology", ""],
+        "Saturday": ["", "","Biology"]
+    },
+   "Chemistry": {
+        "Monday": ["","Chemistry" , ""],
+        "Tuesday": ["", "","Chemistry"],
+        "Wednesday":["Chemistry", "",""],
+        "Thursday": ["", "Chemistry", ""],
+        "Friday": ["Chemistry","", ""],
+        "Saturday": ["", "Chemistry",""]
+    },
+    "Physics": {
+        "Monday": ["","Physics" , ""],
+        "Tuesday": ["", "","Physics"],
+        "Wednesday":["Physics", "",""],
+        "Thursday": ["", "Physics", ""],
+        "Friday": ["","", "Physics"],
+        "Saturday": ["Physics", "",""]
+    },
+    "Earth Sciences": {
+        "Monday": ["Earth Sciences","" , ""],
+        "Tuesday": ["", "Earth Sciences",""],
+        "Wednesday":["", "",""],
+        "Thursday": ["", "Earth Sciences", ""],
+        "Friday": ["","", "Earth Sciences"],
+        "Saturday": ["", "",""]
+    },
+    "Environmental Science": {
+        "Monday": ["","" , ""],
+        "Tuesday": ["", "Environmental Science",""],
+        "Wednesday":["", "",""],
+        "Thursday": ["", "Environmental Science", ""],
+        "Friday": ["","", "Environmental Science"],
+        "Saturday": ["", "",""]
+    }
+    // ... other courses (copy your full scheduleData)
+
+  };
+
+  const courseSelect = document.getElementById("courseSelect");
+  const scheduleBody = document.getElementById("scheduleBody");
+
+  function loadSchedule(course) {
+    scheduleBody.innerHTML = "";
+    const courseSchedule = scheduleData[course];
+    
+    for (const [day, times] of Object.entries(courseSchedule)) {
+      const row = document.createElement("tr");
+      const dayCell = document.createElement("td");
+      dayCell.textContent = day;
+      row.appendChild(dayCell);
+
+      times.forEach((session) => {
+        const cell = document.createElement("td");
+        cell.textContent = session;
+        if (session) cell.classList.add("highlighted");
+        row.appendChild(cell);
+      });
+
+      scheduleBody.appendChild(row);
+    }
+  }
+
+  courseSelect.addEventListener("change", (e) => {
+    loadSchedule(e.target.value);
+  });
+
+  // Load initial schedule
+  loadSchedule(courseSelect.value);
+</script>
+
+<!-- Optional CSS -->
+<style>
+  .highlighted {
+    background-color: #dff0d8; /* light green */
+    font-weight: bold;
+  }
+</style>
+
+
+  

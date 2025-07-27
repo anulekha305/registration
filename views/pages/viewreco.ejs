@@ -1,0 +1,43 @@
+<% layout('/layouts/boilerplate') %>
+
+
+    <body class="bg-light">
+        <div class="container mt-5">
+            <h2>All Recommendations & Reviews</h2>
+
+            <a href="/recommendations" class="btn btn-success mb-3">+ Add New Recommendation</a>
+            <div class="port">
+                <% if (recommendations.length===0) { %>
+                    <p class="text-muted">No recommendations added yet.</p>
+                    <% } %>
+
+                        <div class="list-group">
+                            <% recommendations.forEach(rec=> { %>
+                                <div class="list-group-item mb-3">
+                                    <strong>Created By:</strong>
+                                    <%= rec.owner.username %> <br>
+                                    <strong>Recommendation:</strong>
+                                    <%= rec.recommendation %><br>
+                                        <strong>Student Advice:</strong>
+                                        <%= rec.studentAdvice %><br>
+                                            <strong>Teacher Review:</strong>
+                                            <%= rec.teacherReview %><br>
+
+
+
+
+                                         <% if(curruser && curruser._id.equals(rec.owner._id)){ %>
+                                                <form action="/recommendations/<%= rec._id %>?_method=DELETE"
+                                                    method="POST" style="display:inline-block; margin-top: 10px;">
+                                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                </form>
+
+                                                <a href="/recommendations/<%= rec._id %>/edit" class="btn btn-sm btn-primary ms-2">Edit</a>
+<% } %>
+
+                                </div>
+                                <% }) %>
+                        </div>
+            </div>
+        </div>
+    </body>
