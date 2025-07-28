@@ -12,9 +12,12 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
 const MongoStore = require('connect-mongo');
+const dotenv = require("dotenv");
 
 // Correct MongoDB URI from .env
 const dburl = process.env.ATLASDB_URL;
+dotenv.config();
+
 
 mongoose.connect(dburl, {
   useNewUrlParser: true,
@@ -40,7 +43,7 @@ app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, "/public")));
-
+app.use(express.json());
 
 
 const store=MongoStore.create({
@@ -90,6 +93,11 @@ const marks = require("./routes/marks.js");
 const noti = require("./routes/noti.js");
 const user = require("./routes/user.js");
 const all = require("./routes/all.js");
+
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the Registration App!");
+});
 
 app.use("/idx", all);
 app.use("/recommendations", rec);
