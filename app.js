@@ -95,10 +95,6 @@ const user = require("./routes/user.js");
 const all = require("./routes/all.js");
 
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the Registration App!");
-});
-
 app.use("/idx", all);
 app.use("/recommendations", rec);
 app.use("/idx", marks);

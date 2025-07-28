@@ -4,6 +4,12 @@ const passport = require("passport");
 const User = require("../models/user.js");
 const { savedredirecturl } = require("../middleware.js");
 
+
+
+router.get("/", (req, res) => {
+  res.render("pages/index.ejs");  // Or whatever view you want
+});
+
 // GET: Signup form
 router.get("/signup", (req, res) => {
   res.render("user/signup.ejs");
