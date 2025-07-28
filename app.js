@@ -16,7 +16,7 @@ const dotenv = require("dotenv");
 
 // Correct MongoDB URI from .env
 const dburl = process.env.ATLASDB_URL;
-dotenv.config();
+
 
 
 mongoose.connect(dburl, {
